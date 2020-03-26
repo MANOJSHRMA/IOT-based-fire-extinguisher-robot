@@ -1,0 +1,157 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="jumbotron">
+            <br>
+            <h2 style="text-align:center">Welcome to home page</h2>
+        </div>
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                 alt="Automation" width="100%" height="500">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1532188363366-3a1b2ac4a338?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                 alt="Raspberry pi" width="100%" height="500">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                 alt="Sensors" width="100%" height="500">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-12 mt-5">
+
+      <div class="">
+          <h3 class="jumbotron">IoT based Fire extinguisher Robot</h3>
+          <div class="m-5">
+            <p> <b>Description:</b> A fire extinguisher robot is a device which is programmed to detect temperatures above room temperature, and provide an indication of possibility of fire. A simple fire extinguisher robot is used to generate an alarm in case a fire occurs, so that immediate help can be produced to the site, manually.
+            </p>
+            <p>Such robots have two main components:</p>
+            <ul>
+              <li> Temperature sensor (usually a thermometer) </li>
+              <li> A microcontroller, containing a code to generate spray water on the site of fire as soon as the temperature esceeds a certain value.</li>
+            </ul>
+            <p>
+              Through this project, we intend to design and develop an IoT based fire extinguisher robot, with additional components to enable to not only extinguish fire, but is also capable to traversing a building to hunt for any instances of temperature rise, and then contacting the nearby fire brigade stations, spraying water along with Carbon dioxide gas as a preventive measure.
+            </p>
+            <p>
+              The fire extinguishing action is performed using a water sprinkler that would spray water in the area to curb the fire and its cause.
+            </p>
+            <p>The additional below components add value to the extinguishing action performed by this robot: </p>
+            <ul>
+              <li>GSM module enable the robot to send a text message notifications to the authorized personnel within and outside the building. </li>
+              <li>An accelerometer shall capture the physical coordinates of the robot at that point in time, and share the same asa part of the text message notifications sent through the GSM module.</li>
+            </ul>
+            <p>
+              
+            </p>
+          </div>
+
+          <h3 class="jumbotron"> Blog representation of our idea</h3>
+          <div class="blog_img">
+            <img class="" src="{% static 'img/blog_diagram.png' %}" alt="img not found">
+
+          </div>
+
+          <h3 class="jumbotron">Features</h3>
+          <p>The proposed device has the following features</p>
+          <ol>
+            <li>A mobile extinguisher robot, to move about in a building and hunt for site of fire.</li>
+            <li>Iot functionality that enables it to raise an alert with the nearby fire brigade stations, in case the fire is unable to be controlled by the fire extinguisher robot alone.</li>
+            <li>Higher accuracy</li>
+            <li>Real time operation</li>
+            <li>Efficient & effective</li>
+          </ol>
+          <h3 class="jumbotron"> Hardware and Software Requirement: </h3>
+          <div class="row">
+              <div class="col-6 p-5 bg-light">
+                  <h3>Hardware Requirements are listed below:</h3>
+                  <ul>
+                    <li>Micro-Controller Raspberry Pi</li>
+                    <li>Arduino</li>
+                    <li>Temperature Sensor (Thermistor)</li>
+                    <li>IR Sensor</li>
+                    <li>LED Display</li>
+                    <li>Power Source</li>
+                    <li>Camera Module</li>
+                    <li>Wire Jumpers</li>
+                    <li>Water Sprinkler</li>
+                    <li>Accelerometer</li>
+                    <li>GSM Module</li>
+                    <li>Wheels</li>
+                    <li>DC Motor</li>
+                  </ul>
+              </div>
+              <div class="col-6 p-5 bg-light">
+                <h3>Software</h3>
+                <ul><b>Operating System</b>
+                <ol>
+                  <li>Raspbian</li>
+                </ol>
+                </ul>
+                <ul>
+                  <b>Framework</b>
+                  <ol>
+                    <li>Django</li>
+                    <li>Bootstrap4</li>
+                  </ol>
+                </ul>
+                <ul><b>Databse</b>
+                  <ol>
+                  <li>Sqlite3</li>
+                  </ol>
+                </ul>
+                <ul>
+                  <b>Backend languages</b>
+                  <ol>
+                    <li> Embedded C </li>
+                    <li> Python </li>
+                  </ol>
+                </ul>
+                <ul><b>Forntend languages</b>
+                  <ol>
+                    <li>Html5</li>
+                    <li>css3</li>
+                    <li>Javascript</li>
+                  </ol>
+                </ul>
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
