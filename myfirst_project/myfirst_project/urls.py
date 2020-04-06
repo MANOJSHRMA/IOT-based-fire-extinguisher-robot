@@ -21,11 +21,12 @@ urlpatterns = [
     path('admin/', admin.site.urls,),
     path('', views.home_page_view, name='home'),
     path('about/', views.about_page_view, name='about'),
-    path('signin/', views.Sign_in, name ='signin'),
-    path('logout/', views.sign_out, name = 'logout'),
-    path('signup/', views.SignUP, name = 'signup'),
+    # path('signin/', views.Sign_in, name ='signin'),
+    # path('logout/', views.sign_out, name = 'logout'),
+    # path('signup/', views.SignUP, name = 'signup'),
     path('detail/<int:pk>/', views.FireRecordDetail.as_view(), name='detail'),
     path('results/', views.FireRecordListView.as_view(), name='list'),
-    path('delete/<int:pk>/', views.FireRecordDelete.as_view(), name='delete')
+    path('delete/<int:pk>/', views.FireRecordDelete.as_view(), name='delete'),
+    path('rpi_request/', views.recieve_data_from_rpi, name="rpi_request"),
 
 ]

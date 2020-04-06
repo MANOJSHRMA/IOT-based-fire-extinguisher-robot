@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirect
-from django.contrib.auth import login, logout, authenticate
+from django.http import JsonResponse
+# from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, DeleteView
@@ -33,11 +34,14 @@ class FireRecordDelete(DeleteView):
     success_url = reverse_lazy('list')
 
 def recieve_data_from_rpi(request):
+    message, status_code = "Somthing went wrong", 400
     if request.method == "POST":
         data = request.data
         status = data.get('status')
         FireRecords.objects.create(Alarm_status=status)
-    return HttpResponseRedirect('/')
+        message, status_code = "Data created", 201
+    return JsonResponse(
+        {'message': message}, status=status_code)
 
 def home_page_view(request):
     """
@@ -51,42 +55,42 @@ def about_page_view(request):
     """
     return render(request, "about.html")
 
-def SignUP(request):
-    """
-    Here I used built in Regestration module
-    """
-    form = forms.RegisterForm()
-    if request.method == 'POST':
-        form = forms.RegisterForm(data=request.POST)
-        if form.is_valid():
-            user = form.save()
-            user.set_password(user.password)
-            user.save()
-            return HttpResponseRedirect('/signin')
-        else:
-            messages.error(request, form.errors)
-    return render(request,'registeration.html',{'form':form})
+# def SignUP(request):
+#     """
+#     Here I used built in Regestration module
+#     """
+#     form = forms.RegisterForm()
+#     if request.method == 'POST':
+#         form = forms.RegisterForm(data=request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             user.set_password(user.password)
+#             user.save()
+#             return HttpResponseRedirect('/signin')
+#         else:
+#             messages.error(request, form.errors)
+#     return render(request,'registeration.html',{'form':form})
 
-def sign_out(request):
-    """
-    Django built in logout function
-    """
-    logout(request)
-    return HttpResponseRedirect('/')
+# def sign_out(request):
+#     """
+#     Django built in logout function
+#     """
+#     logout(request)
+#     return HttpResponseRedirect('/')
 
-def Sign_in(request):
-    """
-    Django built in login method using authenticate
-    """
-    if request.method == "POST":
-        name = request.POST['un']
-        pswd = request.POST['pwd']
-        user = authenticate(username=name, password=pswd)
-        if user:
-            if user.is_active:
-                login(request,user)
-                return HttpResponseRedirect('/')
-        else:
-            messages.error(request, 'Please enter valid keyword ')
-            return render(request,'login.html')
-    return render(request,'login.html')
+# def Sign_in(request):
+#     """
+#     Django built in login method using authenticate
+#     """
+#     if request.method == "POST":
+#         name = request.POST['un']
+#         pswd = request.POST['pwd']
+#         user = authenticate(username=name, password=pswd)
+#         if user:
+#             if user.is_active:
+#                 login(request,user)
+#                 return HttpResponseRedirect('/')
+#         else:
+#             messages.error(request, 'Please enter valid keyword ')
+#             return render(request,'login.html')
+#     return render(request,'login.html')
