@@ -3,6 +3,7 @@ from django.http import JsonResponse
 # from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.urls import reverse_lazy
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, DetailView, DeleteView
 from myapp import forms
 from myapp.models import FireRecords
@@ -33,15 +34,17 @@ class FireRecordDelete(DeleteView):
     template_name = 'record_delete.html'
     success_url = reverse_lazy('list')
 
+@csrf_exempt
 def recieve_data_from_rpi(request):
-    message, status_code = "Somthing went wrong", 400
+    message, status_code ="no datat found", 400
     if request.method == "POST":
-        data = request.data
+        data = request.POST['status']
         status = data.get('status')
         FireRecords.objects.create(Alarm_status=status)
         message, status_code = "Data created", 201
     return JsonResponse(
-        {'message': message}, status=status_code)
+        {'message': message
+        }, status=status_code)
 
 def home_page_view(request):
     """
