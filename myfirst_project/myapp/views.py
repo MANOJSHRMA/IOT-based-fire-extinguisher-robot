@@ -41,13 +41,13 @@ def recieve_data_from_rpi(request):
 
 def home_page_view(request):
     """
-    A simple method to display home page 
+    A simple method to display home page
     """
     return render(request, "home_page.html")
 
 def about_page_view(request):
     """
-    A simple method to display about page 
+    A simple method to display about page
     """
     return render(request, "about.html")
 
@@ -72,7 +72,7 @@ def sign_out(request):
     Django built in logout function
     """
     logout(request)
-    return HttpResponseRedirect('/home')
+    return HttpResponseRedirect('/')
 
 def Sign_in(request):
     """
@@ -85,7 +85,7 @@ def Sign_in(request):
         if user:
             if user.is_active:
                 login(request,user)
-                return HttpResponseRedirect('/home/')
+                return HttpResponseRedirect('/')
         else:
             messages.error(request, 'Please enter valid keyword ')
             return render(request,'login.html')

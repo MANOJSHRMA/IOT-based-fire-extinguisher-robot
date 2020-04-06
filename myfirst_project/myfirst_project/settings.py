@@ -26,8 +26,7 @@ SECRET_KEY = '!zc51n=j6fk@86tq53l&9c*q$g*ajj(#$8n00+yff#fl3tkn2u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['munnasharma.pythonanywhere.com']
 
 # Application definition
 
@@ -59,7 +58,8 @@ ROOT_URLCONF = 'myfirst_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates',
+        '/home/munnasharma/final-project-website/myfirst_project/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,6 +126,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS =[
     STATIC_DIR,
 ]
+STATIC_ROOT = '/home/munnasharma/final-project-website/myfirst_project/static'
 
 
 MESSAGE_TAGS = {
