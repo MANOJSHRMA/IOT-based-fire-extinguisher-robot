@@ -34,13 +34,30 @@ class FireRecordDelete(DeleteView):
     template_name = 'record_delete.html'
     success_url = reverse_lazy('list')
 
+# this function is for endpoint to save incoming data from raspberry pi
 @csrf_exempt
 def recieve_data_from_rpi(request):
     message, status_code ="no datat found", 400
     if request.method == "POST":
-        data = request.POST['status']
-        status = data.get('status')
-        FireRecords.objects.create(Alarm_status=status)
+        alarm_status = request.POST['alarm_status']
+        sms_status = request.POST['sms_status']
+        sms_text = request.POST['sms_text']
+        phone_number = request.POST['mob_number']
+        country = request.POST['country']
+        region = request.POST['region']
+        city = request.POST['city']
+        lat = request.POST['lat']
+        lon = request.POST['lon']
+        FireRecords.objects.create(
+            sms_status=sms_status,
+            phone_number=phone_number,
+            sms_text=sms_text,
+            Alarm_status=alarm_status,
+            country=country,
+            region=region,
+            city=city,
+            lat=lat,lon=lon
+        )
         message, status_code = "Data created", 201
     return JsonResponse(
         {'message': message

@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+{% load static%}
 {% block content %}
 
 
@@ -11,7 +12,52 @@
         </div>
       </div>
   </div>
+</section>
+<section>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+                <img src="{% static 'img/manoj.jpeg'%}"
+                 alt="manoj_img" width="100%" height="600px">
+        </div>
+        <div class="col-md-6">
+            <div class="ui-decor-1"></div>
+            <h2 >Student Name : Manoj</h2>
+            <h2 class="ui-title-block ui-title-block_lg_mrg-btm text-primary">Role and responsibility</h2>
+            <ul>
+                <li>Website development</li>
+                <li>Website deployment on server</li>
+                <li>Database design</li>
+                <li>Data uploading using http request</li>
+                <li>Api integration</li>
+            </ul>
+            <p> <b>Technologies</b> : Python,Django,Html,css,bootstarp </p>
+        </div>
 
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+                <img src="{% static 'img/rajjan.jpeg'%}"
+                 alt="manoj_img" width="100%" height="600px">
+             </div>
+        <div class="col-md-6">
+            <div class="ui-decor-1"></div>
+            <h2 >Student Name : Rajan Kumar</h2>
+            <h2 class="ui-title-block ui-title-block_lg_mrg-btm text-primary">Role and responsibility</h2>
+            <ul>
+                <li>Website development</li>
+                <li>Website deployment on server</li>
+                <li>Database design</li>
+                <li>Data uploading using http request</li>
+                <li>Api integration</li>
+            </ul>
+            <p> <b>Technologies</b> : Python,Django,Html,css,bootstarp </p>
+
+        </div>
+
+    </div>
+</div>
 </section>
 
 {% endblock %}

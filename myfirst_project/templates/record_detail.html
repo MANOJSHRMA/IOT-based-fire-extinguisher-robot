@@ -5,13 +5,28 @@
 
 {% block content %}
 <div class="container">
-  <h1 class="jumbotron" style='text-align:center'> Detail demo </h1>
+  <h1 class="jumbotron" style='text-align:center'> Fire Alarm Detail Page  </h1>
 
-  <div style='border: 2px solid black; padding:10px; margin:10px'>
-    <p> Name : {{record.name}}</p>
-    <p> Age : {{record.email}}</p>
-    <p>Status :{{record.Alarm_status}}</p>
-    <p>Time : {{record.Created_at}}</p>
+  <div style='border: 2px solid black; padding:10px; margin:10px' class='row mx-auto'>
+    <div class="col-md-5">
+        <p> Name : {{record.name}}</p>
+        <p> Email : {{record.email}}</p>
+        <p> <b>Alarm status</b> :{{record.Alarm_status}}</p>
+        <p> <b>Phone number</b> : {{record.phone_number}}</p>
+        <p> <b>Sms status</b> : {{record.sms_status}}</p>
+        <p> <b>Sms text</b> : {{record.sms_text}}</p>
+        <p> Time : {{record.Created_at}}</p>
+    </div>
+    <div class="col-md-5 ml-2">
+        <p> <b>Country</b> : {{record.country}}</p>
+        <p> Region : {{record.region}}</p>
+        <p> <b>city</b> : {{record.city}}</p>
+        <p> latitude : {{record.lat}}</p>
+        <p> longitude : {{record.lon}}</p>
+    </div>
+  </div>
+  <div class="" style="text-align:center">
+      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAjxgZlU8pwN4EqU8nolPGPTUbyOlHFef0&q={{record.city}}" width="100%" height="250px"></iframe>
   </div>
   <br>
   <hr>
