@@ -10,4 +10,5 @@ with additional components to enable to not only extinguish fire, but is also ca
 traversing a building to hunt for any instances of temperature rise, and then contacting the
 nearby fire brigade stations, spraying water along with Carbon dioxide gas as a preventive
 measure.
+
  
