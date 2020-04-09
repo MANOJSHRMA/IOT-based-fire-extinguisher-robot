@@ -1,4 +1,4 @@
-Major project 
+Major project :- 
  A fire extinguisher robot is a device which is programmed to detect temperatures
 above room temperature, and provide an indication of possibility of fire. A simple fire
 extinguisher robot is used to generate an alarm in case a fire occurs, so that immediate help
