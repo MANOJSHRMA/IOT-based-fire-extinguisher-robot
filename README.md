@@ -12,3 +12,4 @@ nearby fire brigade stations, spraying water along with Carbon dioxide gas as a 
 measure.
 
  
+![fire robot](https://github.com/MANOJSHRMA/IOT-based-fire-extinguisher-robot/issues/2#issue-597033836)
